@@ -27,13 +27,14 @@ def getserver():
 try:
     SERVER = getserver()
     IP = SERVER[0]
-    PORT = SERVER[1]
+    PORT = int(SERVER[1])
+    sock = socket.socket()
 except:
     IP = "127.0.0.1"
     PORT = 6000
-    active = True
     sock = socket.socket()
-
+    
+active = True
 # Function to display pop-up message using Tkinter
 def show_popup(message):
     
